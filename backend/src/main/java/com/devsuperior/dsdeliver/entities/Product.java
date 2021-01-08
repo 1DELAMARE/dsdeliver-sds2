@@ -1,13 +1,19 @@
 package com.devsuperior.dsdeliver.entities;
-import lombok.Data;
-
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Data 
 @Entity
 @Table(name = "tb_product")
 public class Product implements Serializable {
