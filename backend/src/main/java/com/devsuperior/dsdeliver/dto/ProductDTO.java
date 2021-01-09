@@ -20,6 +20,10 @@ public class ProductDTO implements Serializable {
 	private String description;
 	private String imageUri;
 	
+	public ProductDTO() {
+		
+	}
+	
 	public ProductDTO(Product entity) {
 		id 				= entity.getId();
 		name			= entity.getName();

@@ -27,6 +27,10 @@ public class Product implements Serializable {
 	private Double price;
 	private String description;
 	private String imageUri;
+	
+	public Product() {
+		
+	}
 		
 	
 }

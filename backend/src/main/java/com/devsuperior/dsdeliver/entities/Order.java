@@ -23,6 +23,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -35,6 +36,19 @@ public class Order implements Serializable {
 	private Instant moment;
 	private OrderStatus status;
 	
+	public Order() {
+		
+	}
+	
+	public Order(Long id, String address, Double latitude, Double longitude, Instant moment,
+			OrderStatus status) {
+		this.id = id;
+		this.address = address;
+		this.latitude= latitude;
+		this.longitude=longitude;
+		this.moment = moment;
+		this.status = status;
+	}
 	@ManyToMany
 	@JoinTable(name = "tb_order_product",
 			joinColumns = @JoinColumn(name = "order_id"),
