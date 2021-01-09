@@ -13,6 +13,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Data
+@Setter
+@Getter
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
