@@ -1,17 +1,29 @@
-function OrderSummary(){
+import { formatPrice } from "./helpers";
+
+type Props = {
+    amount: number;
+    totalPrice: number;
+    onSubmit: () => void;
+}
+function OrderSummary({amount, totalPrice, onSubmit}: Props){
     return (
         <div className="order-summary-container">
             <div className="order-summary-content"> 
                 <span className="amount-selected-container">
-                    <strong className="amount-selected">2</strong>
+                    <strong className="amount-selected">{amount}</strong>
                     PEDIDOS SELECIONADOS
                 </span> 
                 <span className="amount-selected-total">
-                    <strong className="amount-selected">R$ 50,00</strong>
+                    <strong className="amount-selected">
+                        {formatPrice(totalPrice)}
+                    </strong>
                     VALOR TOTAL
                 </span> 
-                <button className="order-summary-make-order">
-                FASER PEDIDO
+                <button 
+                    className="order-summary-make-order" 
+                    onClick={onSubmit}                   
+                >
+                FAZER PEDIDO
                 </button>
             </div>            
         </div>
